@@ -1,10 +1,10 @@
-number = int(input('Введите любое положительное число: '))
-while number < 0 or number > 99999999999999999999999:
-    number = int(input('Введите любое положительное число: '))
-max_number = number%10
-number = number//10
-while number > 0:
-    if number%10 > max_number:
-        max_number = number%10
-    number = number//10
-print(max_number, 'Наибольшая цифра в вашем введеном числе')
+# Пользователь вводит строку из нескольких слов, разделённых пробелами.
+# Вывести каждое слово с новой строки. Строки необходимо пронумеровать.
+# Если в слово длинное, выводить только первые 10 букв в слове
+
+my_str = input("Введите слова через пробел: ")
+a = my_str.split(' ')
+for i, el in enumerate(a, 1):
+    if len(el) > 10:
+        el = el[0:10]
+    print(f"{i}. {el}")
