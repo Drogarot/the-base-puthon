@@ -1,10 +1,21 @@
-revenue = int(input('Введите сумму выручки: '))
-costs = int(input('Введите сумму издержек: '))
-if revenue > costs:
-    profitability = revenue - costs
-    rent = profitability / revenue
-    print(f'Ваша фирма работает в прибыль на {profitability} ')
-    worker = int(input('Сколько сотрудников в фирме: '))
-    print(f'{profitability / worker} прибыль фирмы на одного сотрудника')
-elif revenue < costs:
-    print('Ваша фирма работает в убыток')
+# Реализовать структуру «Рейтинг», представляющую собой не возрастающий набор натуральных чисел.
+# У пользователя необходимо запрашивать новый элемент рейтинга.
+# Если в рейтинге существуют элементы с одинаковыми значениями,
+# то новый элемент с тем же значением должен разместиться после них.
+
+number = int(input("Введите любое число: "))
+my_list = [7, 5, 3, 3, 2]
+f = my_list.count(number)
+for element in my_list:
+    if f > 0:
+        i = my_list.index(number)
+        my_list.insert(i+f, number)
+        break
+    else:
+        if number > element:
+            s = my_list.index(element)
+            my_list.insert(s, number)
+            break
+        elif number < my_list[len(my_list) - 1]:
+            my_list.append(number)
+print(my_list)
