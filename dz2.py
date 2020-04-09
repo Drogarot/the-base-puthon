@@ -1,6 +1,8 @@
-time_sec = int(input('Введите время в секундах: '))
-hours = time_sec // 3600
-residue = time_sec % 3600
-minutes = residue // 60
-sec = residue % 60
-print(f'Введёное вами время: {hours}:{minutes}:{sec}')
+# Представлен список чисел. Необходимо вывести элементы
+# исходного списка, значения которых больше предыдущего элемента.
+# Подсказка: элементы, удовлетворяющие условию, оформить
+# в виде списка. Для формирования списка использовать генератор.
+
+my_list = [2, 3, 4, 2, 7, 9]
+my_new_list = [el for num, el in enumerate(my_list) if my_list[num - 1] < my_list[num]]
+print(f'Новый список {my_new_list}')
