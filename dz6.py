@@ -1,9 +1,15 @@
-one_day = float(input('Какой ваш результат в первый день: '))
-result = float(input('Чего вы хотите достичь: '))
-day = 1
-if one_day > result:
-    print(day)
-while one_day < result:
-    one_day = one_day + one_day%10
-    day += 1
-print(day)
+# Реализовать два небольших скрипта:
+# а) бесконечный итератор, генерирующий целые числа,
+# начиная с указанного,
+# б) бесконечный итератор, повторяющий элементы
+# некоторого списка, определенного заранее.
+# Подсказка: использовать функцию count() и cycle()
+# модуля itertools.
+
+from itertools import count
+for el in count(int(input('Введите стартовое число '))):
+    print(el) # внимание - беконечный цикл!
+
+from itertools import cycle
+for i in cycle(['black', 'white', 'yellow']):
+    print(i)  # внимание - беконечный цикл!
