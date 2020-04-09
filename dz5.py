@@ -1,10 +1,12 @@
-revenue = int(input('Введите сумму выручки: '))
-costs = int(input('Введите сумму издержек: '))
-if revenue > costs:
-    profitability = revenue - costs
-    rent = profitability / revenue
-    print(f'Ваша фирма работает в прибыль на {profitability} ')
-    worker = int(input('Сколько сотрудников в фирме: '))
-    print(f'{profitability / worker} прибыль фирмы на одного сотрудника')
-elif revenue < costs:
-    print('Ваша фирма работает в убыток')
+# Реализовать формирование списка, используя
+# функцию range() и возможности генератора.
+# В список должны войти четные числа от 100 до 1000
+# (включая границы). Необходимо получить результат
+# вычисления произведения всех элементов списка.
+# Подсказка: использовать функцию reduce().
+
+from functools import reduce
+def my_func(prev_el, el):
+    return prev_el + el
+print(f'Список четных чисел {[el for el in range(99, 1001) if el % 2 == 0]}')
+print(f'Результат перемножения всех чисел списка {reduce(my_func, [el for el in range(99, 1001) if el % 2 == 0])}')
