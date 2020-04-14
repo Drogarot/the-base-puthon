@@ -1,10 +1,16 @@
-revenue = int(input('Введите сумму выручки: '))
-costs = int(input('Введите сумму издержек: '))
-if revenue > costs:
-    profitability = revenue - costs
-    rent = profitability / revenue
-    print(f'Ваша фирма работает в прибыль на {profitability} ')
-    worker = int(input('Сколько сотрудников в фирме: '))
-    print(f'{profitability / worker} прибыль фирмы на одного сотрудника')
-elif revenue < costs:
-    print('Ваша фирма работает в убыток')
+# Создать (программно) текстовый файл, записать в него программно
+# набор чисел, разделенных пробелами. Программа должна
+# подсчитывать сумму чисел в файле и выводить ее на экран.
+
+def summary():
+    try:
+        with open('testdz5.txt', 'w+') as file_obj:
+            line = input('Введите цифры через пробел \n')
+            file_obj.writelines(line)
+            my_numb = line.split()
+            print(sum(map(int, my_numb)))
+    except IOError:
+        print('Ошибка в файле')
+    except ValueError:
+        print('Неправильно набран номер. Ошибка ввода-вывода')
+summary()

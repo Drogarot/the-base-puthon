@@ -1,3 +1,21 @@
-number = int(input('Введите число: '))
-amount = (number + (number * 11)  + (number * 111))
-print(amount)
+# Создать текстовый файл (не программно), построчно записать
+# фамилии сотрудников и величину их окладов.
+# Определить, кто из сотрудников имеет оклад менее 20 тыс.,
+# вывести фамилии этих сотрудников. Выполнить подсчет средней
+# величины дохода сотрудников.
+
+
+summa = 0
+count = 0
+persons = []
+with open('testdz3.txt', 'r') as my_file:
+    for line in my_file:
+        print(line, end='')
+        tokens = line.split(':')
+        if int(tokens[1]) <= 20000:
+            persons.append(tokens[0])
+        summa += int(tokens[1])
+        count += 1
+result = summa / count
+print(f'Сотрудники с низким окладом: {persons}')
+print(f'Средняя величина дохода: {result}')

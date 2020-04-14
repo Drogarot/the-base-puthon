@@ -1,10 +1,20 @@
-number = int(input('Введите любое положительное число: '))
-while number < 0 or number > 99999999999999999999999:
-    number = int(input('Введите любое положительное число: '))
-max_number = number%10
-number = number//10
-while number > 0:
-    if number%10 > max_number:
-        max_number = number%10
-    number = number//10
-print(max_number, 'Наибольшая цифра в вашем введеном числе')
+# Создать (не программно) текстовый файл со следующим содержимым:
+# One — 1
+# Two — 2
+# Three — 3
+# Four — 4
+# Необходимо написать программу, открывающую файл на чтение
+# и считывающую построчно данные. При этом английские
+# числительные должны заменяться на русские.
+# Новый блок строк должен записываться в новый текстовый файл.
+
+rus = {'One': 'Один', 'Two': 'Два', 'Three': 'Три', 'Four': 'Четыре'}
+new_file = []
+with open('testdz4.txt.', 'r') as file_obj:
+    for i in file_obj:
+        i = i.split(' ', 1)
+        new_file.append(rus[i[0]] + '  ' + i[1])
+    print(new_file)
+
+with open('test_4_new.txt', 'w') as file_obj_2:
+    file_obj_2.writelines(new_file)
