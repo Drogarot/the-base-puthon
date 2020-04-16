@@ -1,4 +1,0 @@
-Ivanov: 35000
-Sidorov: 19000
-Vasechkinov: 28000
-Ermolaev: 17000
